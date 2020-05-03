@@ -1,0 +1,34 @@
+body{
+	background-color: #E6E6E6; 
+
+}
+#blue{
+	font-size: 50pt; text-align: center; font-family: Fredoka One;
+    background-color: #0404B4;
+    color: #FFBF00;
+	
+}
+#Login{
+	font-size: 15pt; font-family: Arial; 
+
+}
+#colors{
+	font-family: Arial; 
+    background-size: 50pt;
+}
+#div1{
+	font-family: Arial; font-size: 15pt;
+	
+}
+#img{
+	width: 40px; 
+}
+#submit{
+	background-color: #0404B4;
+	color: #FFBF00;	
+}
+#pchat{
+	color: #FFBF00;
+	width: 80px;
+	text-align: center;
+}

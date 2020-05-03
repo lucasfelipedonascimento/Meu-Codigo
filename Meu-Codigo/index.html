@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="por">
+     <head>
+     <meta charset="utf-8"/>
+     <title> Testando o sublime</title>
+     <link rel="stylesheet" href="index3.css">
+     <script src="script.js"> </script>
+    <body>   
+        <header>	
+    	<h1 id="blue"> chatconnect </h1><br>
+        </header>
+    	<table>
+        <tr>
+        <td><h2> Sejam Bem-Vindos! </h2></td>
+    	 </tr>
+         </table>
+         <table>       
+         <tr>
+         <td><nav><h4 id="Login"> Login </h4></nav></td>
+         </tr>
+    	<form method="POST" target="banck" id="colors"> 
+    	<div id="div1">
+        <tr>
+    		<td><label for="email"> email: </label> </td>
+    		<td><input type="Email" name="email" id="email" placeholder="email" autofocus required onkeyup="fillEmailStorage();" /></td>
+        </tr><br />
+        </div> 
+        <div id="div1">
+            <tr>
+        	<td><label for="password"> senha:</label></td>
+        	<td><input type="password" id="password" name="password" placeholder="senha" required onkeyup="fillPasswordStorage();" /></td>
+        </tr><br />
+        </div> 
+        </table>
+        <div>
+        <input id="submit" type="submit" name="Enviar" onclick="submitStorage();"> 
+        </div>  
+        </form>      
+        <table>
+        <tr>
+        <td><nav><h4> Ainda não se cadastrou? O que você está esperando? </h4></nav></td> <br>
+    	</tr>
+        <tr>        
+        <td><h4 id="Login"> Cadastre-se</h4></td>
+        </tr>
+        </table>       
+        <table>  
+        <form method="POST" target="banck"/>      
+    	<div>
+    		<tr>
+            <td><label>Nome:</label></td>
+    		<td><input type="text" name="Nome" required placeholder="Nome"/></td>
+            </tr>
+    	</div>	
+        <div>
+            <tr>
+        	<td><label>Sobrenome:</label></td>
+        	<td><input tipo="text" nome="Sobrenome" required placeholder="Sobrenome"/></td>
+            </tr>
+        </div> 
+        <div>
+            <tr>
+        	<td><label>email:</label></td>
+        	<td><input type="email" name="email" required placeholder="seu email"/></td>
+            </tr>
+        <div>
+            <tr>
+        	<td><label> senha: </label></td>
+        	<td><input type="password" name="Senha" required placeholder="sua senha"/></td>
+            </tr>
+        </div>	
+        <div> 
+            <tr>
+        	<td><label> Repita Senha:</label></td>
+        	<td><input type="password" name="Senha" required placeholder="repita a senha"/></td>
+            </tr>
+        </div>
+        <div>
+            <tr>
+        	<td><label> Data de Nascimento </label></td>
+        	<td><input type="date" name="Data" required /></td>
+            </tr>
+        </div>
+        <div>
+            <tr>
+        	<td><label> Sexo: </label></td>
+        	<td><select value="sexo">
+                    <option> Masculino </option>
+                    <option> Feminino </option>
+                    <option> Outro</option>
+                </select></td>
+            </tr>    
+        </div>           
+        </table>
+        <div>
+        <input id="submit" type="submit" name="Enviar">
+        </div>
+        </form>
+        
+    </body>
+</html> 
+
+
