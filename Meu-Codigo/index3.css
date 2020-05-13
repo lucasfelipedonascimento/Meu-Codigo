@@ -1,6 +1,5 @@
 body{
-	background-color: #E6E6E6;
-	margin: auto; 
+	background-color: #E6E6E6; 
 }
 #blue{
 	font-size: 50pt; text-align: center; font-family: Fredoka One;
@@ -10,6 +9,7 @@ body{
 }
 #Login{
 	font-size: 15pt; font-family: Arial; 
+	align-items: center;
 
 }
 #colors{
@@ -23,12 +23,27 @@ body{
 #img{
 	width: 40px; 
 }
-#submit{
-	background-color: #0404B4;
-	color: #FFBF00;	
-}
+
 #pchat{
 	color: #FFBF00;
 	width: 80px;
+	text-align: center;
+}
+table{
+	margin: auto;
+}
+#center{
+	text-align: center;	
+}
+#submit{
+   background-color: #0404B4;
+   color: #FFBF00;
+   font: normal 15pt Arial;
+   margin: none;
+   text-align: center;
+}
+#cadastro{
+	font-family: Fredoka One;
+	font-size: 15pt;
 	text-align: center;
 }
