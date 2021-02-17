@@ -12,27 +12,38 @@
 
 <body>
     <header>
-        <h1><img src="./imagens/logo-family.png" alt="Family Expenses"></h1>
+        <h1><img id="logo-header" src="./assets/logo-family.png" alt="Family Expenses"></h1>
     </header>
     <main class="container">
-        <section id="balance">
-            <h2>Balanço</h2>
+        <section class="balance" id="balance">
+            <h2 class="sr-only">Balanço</h2>
             <div class="card">
-                <h3>Entradas</h3>
-                <p>R$ 5.000,00</p>
+                <h3>
+                    <span>Entradas</span>
+                    <img src="./assets/income.svg" alt="Imagem de Entradas">
+                </h3>
+                <p>R$ 6.580,00</p>
             </div>
             <div class="card">
-                <h3>Saídas</h3>
-                <p id="exit">R$ 2.000,00</p>
+                <h3>
+                    <span>Saídas</span>
+                    <img src="./assets/expense.svg" alt="Imagem de Saídas">
+                </h3>
+                <p id="exit">R$ 260,00</p>
             </div>
             <div class="card total">
-                <h3>Total</h3>
-                <p>R$ 3.000,00</p>
+                <h3>
+                    <span>Total</span>
+                    <img src="./assets/total.svg" alt="Imagem do Total">
+                </h3>
+                <p>R$ 6.320,00</p>
             </div>
         </section>
 
         <section id="transaction">
-            <h2>Transações</h2>
+            <h2 class="sr-only">Transações</h2>
+
+            <a href="#" onclick="Modal.open()" class="button new"> + Nova Transação</a>
 
             <table id="data-table">
                 <thead>
@@ -40,6 +51,7 @@
                         <th> Descrição </th>
                         <th> Valor </th>
                         <th> Data </th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -47,27 +59,79 @@
                         <td class="description"> Luz </td>
                         <td class="expense"> - R$ 180,00 </td>
                         <td class="date"> 22/02/2021</td>
-
+                        <td><img src="./assets/minus.svg" alt="Remover Transação"></td>
                     </tr>
                     <tr>
                         <td class="description"> Internet </td>
                         <td class="expense"> - R$ 80,00 </td>
                         <td class="date"> 31/02/2021</td>
+                        <td><img src="./assets/minus.svg" alt="Remover Transação"></td>
                     </tr>
                     <tr>
                         <td class="description"> Criação de WebSite </td>
                         <td class="income"> + R$ 6580,00 </td>
                         <td class="date"> 30/02/2021</td>
+                        <td><img src="./assets/minus.svg" alt="Remover Transação"></td>
                     </tr>
                 </tbody>
 
             </table>
         </section>
+
+
     </main>
 
+    <div class="modal-overlay">
+        <div class="modal">
+            <div class="form">
+                <h2>Nova Transação</h2>
+                <form action="">
+                    <div class="input-group">
+                        <label class="sr-only" for="Description">Descrição</label>
+                        <input type="text" id="Description" name="description" placeholder="Descrição">
+                    </div>
+                    <div class="input-group">
+                        <label class="sr-only" for="amount">Valor</label>
+                        <input type="number" id="amount" name="amount" step="0.01" placeholder="R$ 0,00">
+                        <small class="help">Use sinal negativo (-) para gastos,
+                            sinal positivo (+) para lucros e vírgulas
+                            (,) para separar decimais.</small>
+                    </div>
+                    <div class="input-group">
+                        <label class="sr-only" for="date">Data</label>
+                        <input type="date" id="date" name="date" placeholder="dd/mm/yyyy">
+
+                    </div>
+                    <div class="input-group actions">
+                        <a href="#" onclick="Modal.close()" class="button cancel">Cancelar</a>
+                        <button>Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <footer>
-        <p> Family Expen$es </p>
+        <p><img id="logo-footer" src="./assets/logo-family.png" alt=""></p>
     </footer>
+    <script>
+        const Modal = {
+            open() {
+                // Abrir Modal
+                // Adicionar o active no Modal
+                document.querySelector('.modal-overlay')
+                    .classList
+                    .add('active')
+            },
+            close() {
+                // Fechar Modal
+                // Remover o active do Modal
+                document.querySelector('.modal-overlay')
+                    .classList
+                    .remove('active')
+            }
+        }
+    </script>
 </body>
 
 </html>

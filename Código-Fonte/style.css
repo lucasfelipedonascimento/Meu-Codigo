@@ -1,6 +1,8 @@
 /* Global ====================== */
 *{
     color: rgb(117, 255, 5);
+    margin: 0;
+    box-sizing: border-box;
 }
 :root{
     --primary-color: greenyellow;
@@ -16,15 +18,22 @@
     --eleventh-color: rgba(233, 233, 233, 0.945);
     --twelfth-color: rgb(128, 0, 248);
     --thirteenth-color: rgb(1, 109, 37);
+    --fourteenth-color: rgb(4, 170, 4);
+    
     
 
+}
+html{
+    /*(Regra de 3.|  100% = 16px)  */ 
+    font-size: 93.75%; 
 }
 body{
     font-family: 'Archivo', sans-serif;
     background: var(--eleventh-color);
+    margin: 0;
 }
 .container{
-    width: min(90vw, 900px);
+    width: min(90vw, 800px);
     margin: auto;
 }
 /* Titles ====================== */ 
@@ -43,36 +52,68 @@ h1{
 header{
     background: var(--thirteenth-color);
     text-align: center;
-    padding: 3rem 0 1rem;
-    margin-top: 0;
+    padding:  0 -8rem;
+    margin: 0;
+    height: 310px;   
+}
+#logo-header{
+    width: 227px;
+    height: 227px;
 }
 
 /* Balance ====================== */ 
+.balance{
+    
+    background: var(--fourteenth-color);
+    opacity: 1.0;
+    background-size: 100px;
+    border-radius: 0.45rem;
+    margin: 0%;
+    
+}
 #balance{
     margin-top: -8rem;
     padding: 2rem;
+    margin-bottom: 3rem;
+    
+    
 }
 #balance h2{
     color: var(--second-color);
     margin-top: 0;
     
 }
+.sr-only{
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    padding: 0;
+    margin: -2px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
 /* Cards ====================== */ 
 .card{
     background: var(--second-color);
-    padding: 1.5rem 2rem;
+    padding: 2.5rem 2rem;
     border-radius: 0.25rem;
     margin-bottom: 2rem;
+    display: grid;
 }
 .card h3{
     color: var(--thirteenth-color);
     font-weight: normal;
     font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .card p{
     font-size: 2rem;
     line-height: 3rem;
-
     margin-top: 1rem;
 }
 .card.total {
@@ -83,11 +124,30 @@ header{
 }
 .card #exit{
     color: var(--bedroom-color);
+    border-spacing: 0 0 2rem;
 }
+/* Links & Button ====================== */ 
+a{
+    color: var(--thirteenth-color);
+    text-decoration: none;
+    
+}
+a:hover{
+    color: var(--fourteenth-color);
+}
+.button.new{
+    display: inline-block;
+    margin-bottom: .9rem;
+}
+
 /* Table ====================== */ 
 #data-table{
    width: 100%;
-   border-spacing: 0 0,5rem;
+   border-spacing: 0 0 5rem;
+}
+#transaction{
+    display: block;
+   overflow-x: hidden;
 }
 table tbody tr {
     opacity: 0.7;
@@ -108,8 +168,13 @@ table td{
     color: rgb(55, 197, 55);
     font-weight: bold;
 }
-table thead tr th:first-child, table tbody tr td:first-child{
-    border-radius: 0.25rem 0 0 0.25rem;
+table thead tr th:first-child, 
+table tbody tr td:first-child{
+    border-radius: 0.25rem  0 0 0.25rem;
+}
+table thead tr th:last-child, 
+table tbody tr td:last-child{
+    border-radius: 0 0.25rem 0.25rem 0;
 }
 td.description{
     color: var(--ninth-color);
@@ -120,12 +185,128 @@ td.expense{
 td.income{
     color: rgb(2, 255, 2);
 }
+/* Modal ====================== */ 
+.modal-overlay{
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 999;
+
+}
+.modal-overlay.active{
+    opacity: 1;
+    visibility: visible;
+}
+.modal{
+    background: var(--eleventh-color);
+    padding: 2.4rem;
+    position: relative;
+    z-index: 1;
+}
+/* Formulários ====================== */
+form{
+    max-width: 500px;
+    
+}
+.form h2{
+    margin-top: 0;
+}
+input {
+    margin-top: 0.2rem;
+    border-radius: 0.25rem;
+    border: none;
+    width: 100%;
+    padding: 0.8rem;
+    color: var(--eighth-color);
+}
+.input-group{
+    margin-top: 0.8rem;
+    
+}
+.input-group small{
+    opacity: 9.4;
+    color: var(--ninth-color);
+}
+.input-group.actions{
+    display: flex;
+    justify-content: space-between;
+    color: var(--second-color);
+    font-family: 'Archivo';   
+    cursor: pointer;
+    
+}
+.input-group.actions .button,
+.input-group.actions button
+{
+    width: 100%;
+    padding: 0.9rem;
+    justify-content: center;
+    margin-right: 2%;
+}
+.input-group.actions a{
+    color: var(--bedroom-color);
+    text-align: center;
+    border-radius: 1.25rem;
+    border: 2px var(--bedroom-color) solid;
+    font-family: 'Archivo';
+    cursor: pointer;
+    font-size: 120%;
+    height: 50px;
+    justify-content: center;
+
+}
+.input-group.actions a:hover{
+    background: rgb(156, 0, 0);
+    color: var(--second-color);
+}
+.input-group.actions button{
+    background: var(--thirteenth-color);
+    color: var(--second-color);
+    border-radius: 1.25rem;
+    font-size: 120%;
+    justify-content: center;
+    border: 2px var(--fourteenth-color) solid;
+}
+.input-group.actions button:hover{
+    background: rgb(1, 107, 16);
+}
+.input-group #date{
+    color: var(--eighth-color);
+}
 /* Footer ====================== */ 
 footer {
     text-align: center;
-    padding: 4rem 0 2rem;
+    padding: 2rem 0 0;
     opacity: 0.9;
+    margin: 2rem 0 0 0 ;
+    display: grid;
+    background: var(--thirteenth-color);
+   
 }
-footer p{
-    color: var(--thirteenth-color);
+#logo-footer{
+    width: 125px;
+    height: 125px;
+}
+
+
+/* Responsive ====================== */ 
+
+@media (min-width: 800px) {
+    
+    html {
+        font-size: 87.5%;
+    }
+
+    #balance {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
 }
